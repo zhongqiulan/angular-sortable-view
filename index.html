@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular-sortable-view</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-sortable-view.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="MyApp">
+    <div ng-controller="MyController as vm" class="background">
+        <div sv-root sv-part="vm.items" class="sv-container">
+            <div ng-repeat="item in vm.items" sv-element class="sv-cell">
+                <div>
+                    <div>name: {{item.name}}</div>
+                    <div>value: {{item.age}}</div>
+                </div>
+                <span class="sv-handle" sv-handle>拖拽手柄</span>
+            </div>
+        </div>
+        <hr/>
+        <div class="show-data">
+            {{vm.items}}
+        </div>
+    </div>
+
+</body>
+</html>
